@@ -21,6 +21,10 @@ public class Grafo {
 	
 	public void eliminarVertice(int vertice) {
 		verificarVertice(vertice);
+		Set<Integer> vecinos = obtenerVecinos(vertice);
+		for(Integer vecino : vecinos) {
+			eliminarArista(vertice, vecino);
+		}
 		vecindad.remove(vertice);
 	}
 	

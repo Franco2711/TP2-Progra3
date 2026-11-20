@@ -11,7 +11,8 @@ import java.util.Set;
 public class GeneradorDeRegiones {
 
     public List<Set<Integer>> formarRegiones(Grafo mapa, int k) {
-        int cantidadVertices = mapa.obtenerVertices().size();
+    	Set<Integer> vertices = mapa.obtenerVertices();
+        int cantidadVertices = vertices.size();
         if(cantidadVertices == 0) {
         	throw new IllegalArgumentException("El grafo no contiene provincias");
         }
@@ -19,7 +20,7 @@ public class GeneradorDeRegiones {
             throw new IllegalArgumentException("Debe ingresar un valor entre 1 y la cantidad de provincias");
         }
         // Construyo el AGM
-        Grafo agm = new AGMPrim(mapa).crearAGM(mapa.obtenerVertices().iterator().next());
+        Grafo agm = new AGMPrim(mapa).crearAGM(vertices.iterator().next());
         // Obtengo todas las aristas del AGM
         List<AristaConOrigen> aristas = obtenerAristasUnicas(agm);
         // Ordeno por peso creciente

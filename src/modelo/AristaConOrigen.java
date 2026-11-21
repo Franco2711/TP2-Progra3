@@ -1,12 +1,12 @@
-package logica;
+package modelo;
 
-class AristaPrim implements Comparable<AristaPrim> {
+ public class AristaConOrigen implements Comparable<AristaConOrigen> {
 
 	private int origen;
     private int destino;
     private int peso;
 
-    public AristaPrim(int origen, int destino, int peso) {
+    public AristaConOrigen(int origen, int destino, int peso) {
         this.origen = origen;
         this.destino = destino;
         this.peso = peso;
@@ -25,7 +25,7 @@ class AristaPrim implements Comparable<AristaPrim> {
     }
 
     @Override
-    public int compareTo(AristaPrim otra) {
+    public int compareTo(AristaConOrigen otra) {
         return Integer.compare(this.peso, otra.peso);
     }
 

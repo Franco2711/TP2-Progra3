@@ -1,4 +1,4 @@
-package logica;
+package modelo;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -94,7 +94,7 @@ public class Grafo {
 	
 	private void verificarVerticesDistintos(int origen, int destino) {
 		if(origen == destino) {
-			throw new IllegalArgumentException("El origen y el destino no deben ser iguales");
+			throw new IllegalArgumentException("El origen y el destino no deben ser iguales. ");
 		}
 	}
 	
